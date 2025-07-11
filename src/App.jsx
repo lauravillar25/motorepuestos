@@ -1,21 +1,21 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import NavBar from './components/NavBar.jsx'
-import ItemListContainer from './containers/ItemListContainer.jsx'
-import ItemDetailContainer from './containers/ItemDetailContainer.jsx'
-import NotFound from './components/NotFound.jsx'
+
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
       <Routes>
-        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/" element={<Navigate to="/products" />} />
+        <Route path="/products" element={<ItemListContainer />} />
         <Route path="/category/:categoryId" element={<ItemListContainer />} />
-        <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+        <Route path="/product/:productId" element={<ItemDetailContainer />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

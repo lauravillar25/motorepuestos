@@ -1,3 +1,10 @@
+import React from "react";
+
 export default function NotFound() {
-  return <h2>Página no encontrada (404)</h2>
+  return (
+    <div>
+      <h2>404 - Página no encontrada</h2>
+      <p>La ruta que buscas no existe.</p>
+    </div>
+  );
 }
